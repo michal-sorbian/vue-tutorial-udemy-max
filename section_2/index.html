@@ -5,22 +5,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Vue - section 2</title>
+	<link rel="stylesheet" href="style.css">
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-	<div id="app">
+	<!-- <div id="app">
 		<h1 v-once>{{ title }}</h1>
-		<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+		<p>{{ sayHello() }} - <a :href="link">Google</a></p>
 		<hr>
 		<p v-html="finishedLink"></p>
 		<hr>
-		<button v-on:click="increaseCounter(3, $event)">Click</button>
-		<button v-on:click="counter++">Click++</button>
+		<button @:click="increaseCounter(3, $event)">Click</button>
+		<button @:click="counter++">Click++</button>
 		<p>{{counter}} {{ counter > 10 ? 'greater than 10' : 'smaller than 10' }}</p>
 		<hr>
-		<p v-on:mousemove="updateCoords" style="border: 1px solid;">Coordinates: {{x}}/{{y}} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
+		<p @:mousemove="updateCoords" style="border: 1px solid;">Coordinates: {{x}}/{{y}} - <span @:mousemove.stop="">DEAD SPOT</span></p> -->
 		<!-- stop -> e.stopPropagation(); -->
-		<hr>
+		<!-- <hr>
 		<input type="text" v-on:keypress.enter="alertMe">
 		<hr>
 		<input type="text" v-model="name">
@@ -31,7 +32,24 @@
 		<button v-on:click="drugiLicznik--">Increase drugi</button>
 		<p>Licznik: {{ licznik }} | {{ drugiLicznik }}</p>
 		<p>Result: {{ result() }} | {{ output }}</p>
-	</div>
+	</div>  -->
+
+	<!-- <div id="styling">
+		<div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+		<div class="demo" :class="divClasses"></div>
+		<div class="demo" :class="[color, {red: attachRed}]"></div>
+		<hr>
+		<input type="text" v-model="color">
+	</div> -->
+
+	<div id="styling2">
+			<div class="demo" :style="divClasses"></div>
+			<div class="demo" :style="divClasses"></div>
+			<div class="demo" :style="[divClasses, {height: width+'px'}]"></div>
+			<hr>
+			<input type="text" v-model="color">
+			<input type="number" v-model="width">
+		</div>
 
 	<script src="app.js"></script>
 </body>

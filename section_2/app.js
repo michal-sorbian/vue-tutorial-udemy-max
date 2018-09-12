@@ -1,6 +1,7 @@
 // Put this in the script section in JSFiddle
 // In a local setup, you need to merge this and the index.html file into one file
 
+/*
 new Vue({
 	el: '#app',
 	data: {
@@ -46,6 +47,49 @@ new Vue({
 			console.log("computed");
 			
 			return this.licznik > 5 ? 'Wiekszy niz 5' : 'Mniejszy niz 5';
+		}
+	},
+	watch: {
+		licznik: function(value){
+			var vm = this;
+			setTimeout(function(){
+				vm.licznik = 0;
+			}, 3000);
+		}
+	}
+});
+*/
+
+/*
+new Vue({
+	el: '#styling',
+	data: {
+		attachRed: false,
+		color: 'green'
+	},
+	computed: {
+		divClasses: function(){
+			return {
+				red: this.attachRed,
+				blue: !this.attachRed
+			}
+		}
+	}
+});
+*/
+
+new Vue({
+	el: '#styling2',
+	data: {
+		color: 'gray',
+		width: 100
+	},
+	computed: {
+		divClasses: function(){
+			return {
+				backgroundColor: this.color,
+				width: this.width+'px'
+			}
 		}
 	}
 });
