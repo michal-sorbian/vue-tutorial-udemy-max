@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue - section 2</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1 v-once>{{ title }}</h1>
+		<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+		<hr>
+		<p v-html="finishedLink"></p>
+		<hr>
+		<button v-on:click="increaseCounter(3, $event)">Click</button>
+		<button v-on:click="counter++">Click++</button>
+		<p>{{counter}} {{ counter > 10 ? 'greater than 10' : 'smaller than 10' }}</p>
+		<hr>
+		<p v-on:mousemove="updateCoords" style="border: 1px solid;">Coordinates: {{x}}/{{y}} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
+		<!-- stop -> e.stopPropagation(); -->
+		<hr>
+		<input type="text" v-on:keypress.enter="alertMe">
+		<hr>
+		<input type="text" v-model="name">
+		<p>{{name}}</p>
+		<hr>
+		<button v-on:click="licznik++">Increase</button>
+		<button v-on:click="licznik--">Decrease</button>
+		<button v-on:click="drugiLicznik--">Increase drugi</button>
+		<p>Licznik: {{ licznik }} | {{ drugiLicznik }}</p>
+		<p>Result: {{ result() }} | {{ output }}</p>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
