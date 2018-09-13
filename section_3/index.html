@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vue section 3</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<!-- <div id="app">
+		<p v-if="show">You can see me! <span>Elo!</span></p>
+		<p v-else>Now you see me</p>
+
+		<template v-if="show">
+			<p>Inside a template</p>
+		</template>
+
+		<p v-show="show">Do you also see me?</p>
+		<hr>
+		<button @click="show = !show">Switch</button>
+	</div> -->
+
+	<div id="app2">
+		<ul v-if="ingredients">
+			<li v-for="(ing, index) in ingredients" :key="ing">{{ ing }} ({{ index }})</li>
+		</ul>
+		<button @click="ingredients.push('test')">Add new ingredient</button>
+		<template v-for="(ing, i) in ingredients">
+			<h4>{{ ing }}</h4>
+			<p>{{ i }}</p>
+		</template>
+		<hr>
+		<ul>
+			<li v-for="(person, i) in persons">
+				<div>{{i}}</div>
+				<span v-for="(value, key, index) in person">{{key}}: {{value}} ({{ index }})</span>
+			</li>
+		</ul>
+		<span v-for="i in 10">{{ i }}</span>
+		
+	</div>
+
+
+	<script src="app.js"></script>
+</body>
+</html>
+<!-- Put this in the HTML section in JSFiddle! -->
+
+
+
