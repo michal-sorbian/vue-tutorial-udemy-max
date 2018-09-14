@@ -27,6 +27,7 @@ var vm1 = new Vue({
 
 setTimeout(function(){
   vm1.title = "Changed by timer";
+  vm1.show();
 }, 2000);
 
 var vm2 = new Vue({
