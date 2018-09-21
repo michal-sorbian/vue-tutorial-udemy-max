@@ -9,10 +9,15 @@
 </template>
 
 <script>
-export default {
+export default {    
+    // computed: {
+    //     id: function () {
+    //         return this.$route.params.id
+    //     }
+    // },
     methods: {
         navigateToHome() {
-            this.$router.push({ path: '/' })
+            this.$router.push({ name: 'home' })
         }
     }
 }
